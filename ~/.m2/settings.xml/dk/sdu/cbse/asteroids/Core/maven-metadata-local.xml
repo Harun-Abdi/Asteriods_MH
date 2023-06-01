@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>dk.sdu.cbse.asteroids</groupId>
+  <artifactId>Core</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20230530194034</lastUpdated>
+  </versioning>
+</metadata>
