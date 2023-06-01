@@ -11,26 +11,19 @@ public class CollisionDetector implements IPostEntityProcessingService {
 
     @Override
     public void process(GameData gameData, World world) {
-        // two for loops for all entities in the world
+
         for (Entity entity : world.getEntities()) {
             for (Entity collisionDetection : world.getEntities()) {
-                // get life parts on all entities
+
                 LifePart entityLife = entity.getPart(LifePart.class);
 
-                // if the two entities are identical, skip the iteration
                 if (entity.getID().equals(collisionDetection.getID())) {
                     continue;
-
-                    // remove entities with zero in expiration
                 }
-
-                // CollisionDetection
                 if (this.collides(entity, collisionDetection)) {
-                    // if entity has been hit, and should have its life reduced
                     if (entityLife.getLife() > 0) {
                         entityLife.setLife(entityLife.getLife() - 1);
                         entityLife.setIsHit(true);
-                        // if entity is out of life - remove
                         if (entityLife.getLife() <= 0) {
                             world.removeEntity(entity);
                         }

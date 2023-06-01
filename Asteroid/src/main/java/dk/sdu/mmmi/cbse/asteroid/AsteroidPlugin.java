@@ -13,14 +13,13 @@ public class AsteroidPlugin implements IGamePluginService {
 
     @Override
     public void start(GameData gameData, World world) {
-        // Add entities to the world
+
         Entity asteroid = createAsteroid(gameData);
         world.addEntity(asteroid);
     }
 
     @Override
     public void stop(GameData gameData, World world) {
-        // Remove entities
         for (Entity asteroid : world.getEntities(Asteroid.class)) {
             world.removeEntity(asteroid);
         }
@@ -32,8 +31,8 @@ public class AsteroidPlugin implements IGamePluginService {
         float speed = (float) Math.random() * 10f + 20f;
 
         asteroid.setRadius(20);
-        asteroid.add(new MovingPart(0, speed, speed, 0));
-        asteroid.add(new PositionPart(100, 200, radians));
+        asteroid.add(new MovingPart(5, speed, speed, 3));
+        asteroid.add(new PositionPart(130, 100, radians));
         asteroid.add(new LifePart(3));
 
         return asteroid;

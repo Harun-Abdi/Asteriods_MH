@@ -63,13 +63,7 @@ public class Game
 
         ((PlugInjection) components.getBean("pluginInjector")).startPlugins(gameData, world);
 
-        /*
-        // Lookup all Game Plugins using ServiceLoader
-        for (IGamePluginService iGamePlugin : getPluginServices()) {
-            iGamePlugin.start(gameData, world);
-        }
 
-         */
 
 
     }

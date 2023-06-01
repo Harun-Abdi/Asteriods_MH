@@ -21,7 +21,7 @@ public class EnemyPlugin implements IGamePluginService {
     @Override
     public void start(GameData gameData, World world) {
 
-        // Add entities to the world
+
         enemy = createEnemyShip(gameData);
         world.addEntity(enemy);
     }
@@ -40,7 +40,7 @@ public class EnemyPlugin implements IGamePluginService {
         colour[0] = 1.0f;
         colour[1] = 0.0f;
         colour[2] = 0.0f;
-        colour[3] = 1.0f;
+        colour[3] = 1.0f;//g
 
         Entity enemyShip = new Enemy();
         enemyShip.setRadius(8);
@@ -53,7 +53,7 @@ public class EnemyPlugin implements IGamePluginService {
 
     @Override
     public void stop(GameData gameData, World world) {
-        // Remove entities
+
         world.removeEntity(enemy);
     }
 

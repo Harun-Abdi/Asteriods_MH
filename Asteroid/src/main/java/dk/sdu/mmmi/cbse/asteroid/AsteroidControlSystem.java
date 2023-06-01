@@ -20,13 +20,13 @@ public class AsteroidControlSystem implements IEntityProcessingService {
             MovingPart movingPart = asteroid.getPart(MovingPart.class);
             LifePart lifePart = asteroid.getPart(LifePart.class);
 
-            int numPoints = 12;
+            int shiftval = 12;
             float speed = 100;
             if (lifePart.getLife() == 1) {
-                numPoints = 8;
+                shiftval = 8;
                 speed = (float) Math.random() * 30f + 70f;
             } else if (lifePart.getLife() == 2) {
-                numPoints = 10;
+                shiftval = 10;
                 speed = (float) Math.random() * 10f + 50f;
             }
             movingPart.setSpeed(speed);
@@ -39,20 +39,11 @@ public class AsteroidControlSystem implements IEntityProcessingService {
             if (lifePart.isHit()) {
                 asteroidSplitter.createSplitAsteroid(asteroid, world);
             }
-            setShape(asteroid, numPoints);
+            setShape(asteroid, shiftval);
         }
 
     }
-    /*
-    public void setAsteroidSplitter(IAsteroidSplitter asteroidSplitter) {
-        this.asteroidSplitter = asteroidSplitter;
-    }
 
-    public void removeAsteroidSplitter(IAsteroidSplitter asteroidSplitter) {
-        this.asteroidSplitter = null;
-    }
-
-     */
 
     private void setShape(Entity entity, int numPoints) {
         PositionPart position = entity.getPart(PositionPart.class);

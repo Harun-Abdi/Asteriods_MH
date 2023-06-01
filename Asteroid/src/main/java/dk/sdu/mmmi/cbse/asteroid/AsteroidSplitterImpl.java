@@ -16,8 +16,8 @@ public class AsteroidSplitterImpl  {
         PositionPart otherPos = e.getPart(PositionPart.class);
         LifePart otherLife = e.getPart(LifePart.class);
         float radians = otherPos.getRadians();
-        int radius = 2;
-        float speed = 20;
+        int radius = 4;
+        float speed = 14;
         int life = otherLife.getLife() - 1;
         if (life == 1) {
             radius = 6;
